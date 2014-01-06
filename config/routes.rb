@@ -5,8 +5,12 @@ Mcdapp::Application.routes.draw do
   match '/signout', to: 'sessions#destroy',     via: 'delete'
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
+  match '/cities', to: 'restaurants#index', via: 'get'
   
-  resources :restaurants
+  resources :restaurants do
+	  post 'search', :on => :collection
+  end
+  
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]

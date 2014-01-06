@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Search results
+</title>
+</head>
+<body>
+<h1>Search results</h1>
+<table border="1">
+<tr>
+<td width="40%"><p align="center"><i><b>City</b></i></td>
+<td width="20%"><p align="center"><i><b>Cost</b></i></td>
+</tr>
+<% @restaurants.each do |restaurant| %>
+<tr>
+<td>
+<%=restaurant.city%>
+</td>
+<td>
+<%=restaurant.cost%>
+</a>
+</td>
+</tr>
+<% end %>
+</table>
+<p> <a href="/restaurants"> Back</a> </body>
+</html>

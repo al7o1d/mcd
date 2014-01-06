@@ -1,6 +1,10 @@
 <h1>Listing restaurants</h1>
-
-<table>
+<table id="restaurants">
+<h3>Enter keyword</h3>
+<form action ="restaurants/search" method="post">
+<input name = "key" type="input" />
+<input value="Send" type="submit"/>
+</form>
   <thead>
     <tr>
       <th>City</th>
@@ -17,13 +21,9 @@
         <td><%= restaurant.city %></td>
         <td><%= restaurant.cost %></td>
         <td><%= link_to 'Show', restaurant %></td>
-        <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
 <br>
-
 <%= link_to 'New Restaurant', new_restaurant_path %>
